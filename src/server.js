@@ -1,9 +1,10 @@
 require("dotenv").config();
 const express = require("express");
+
 const server = express();
 const { PORT } = process.env;
 
-server.get("/", (req, res) => res.send("Vai!"));
+require("./routes.js")(server);
 
 server.listen(PORT, () => {
   console.log(`Servidor de pé em: http://localhost:${PORT}`);

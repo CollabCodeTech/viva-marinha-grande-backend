@@ -4,7 +4,7 @@ module.exports = {
     commonjs: true,
     es6: true
   },
-  extends: ["airbnb-base", ["plugin:prettier/recommended"]],
+  extends: ["airbnb-base", "prettier"],
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly"
