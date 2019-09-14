@@ -1,12 +1,17 @@
-require("dotenv").config();
-const express = require("express");
+import dotenv from "dotenv";
+import express from "express";
+import database from "./config/database";
+import Routes from "./Routes";
 
-const server = express();
+dotenv.config();
+
+const app = express();
 const { PORT } = process.env;
 
-require("./routes.js")(server);
+app.use(express.json());
+app.use("/", Routes);
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Servidor de pé em: http://localhost:${PORT}`);
   console.log("Para desligar o servidor: ctrl + c");
 });
