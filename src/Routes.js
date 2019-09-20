@@ -11,5 +11,6 @@ routes.get("/service/resume", ServiceController.getResume);
 routes.post("/service", ServiceController.create);
 
 routes.post("/category", CategoryController.create);
+routes.get("/category", CategoryController.getAll);
 
 export default routes;
