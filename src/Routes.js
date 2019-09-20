@@ -7,7 +7,7 @@ const routes = Router();
 
 routes.get("/", (req, res) => res.send("Home"));
 
-routes.get("/service/resume", ServiceController.getResume);
+routes.get("/service/overview", ServiceController.getOverview);
 routes.post("/service", ServiceController.create);
 
 routes.post("/category", CategoryController.create);

@@ -1,11 +1,11 @@
 import Service from "../models/Service";
 
 class ServiceController {
-  static async getResume(req, res) {
+  static async getOverview(req, res) {
     try {
       const services = await Service.find();
 
-      return res.status(201).json(services);
+      return res.status(200).json(services);
     } catch (error) {
       return res.status(500).json(error);
     }
@@ -15,7 +15,7 @@ class ServiceController {
     try {
       const service = await Service.create(req.body);
 
-      return res.json(service);
+      return res.status(201).json(service);
     } catch (error) {
       return res.status(500).json(error);
     }
