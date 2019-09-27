@@ -12,6 +12,19 @@ class BusinessController {
     }
   }
 
+  static async getByCategories(req, res) {
+    try {
+      const { categories } = req.query;
+      const buniness = await Business.find({
+        category: { $in: categories }
+      });
+
+      return res.status(200).json(buniness);
+    } catch (error) {
+      return res.status(500).json(error);
+    }
+  }
+
   static async getById(req, res) {
     const { id } = req.params;
 
