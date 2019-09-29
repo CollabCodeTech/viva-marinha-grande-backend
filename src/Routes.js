@@ -9,6 +9,7 @@ routes.get("/", (req, res) => res.send("Home"));
 
 routes.get("/business/overview", BusinessController.getOverview);
 routes.get("/business/categories", BusinessController.getByCategories);
+routes.post("/business/photo", BusinessController.uploadPhoto);
 routes.get("/business/:id", BusinessController.getById);
 routes.post("/business", BusinessController.create);
 
